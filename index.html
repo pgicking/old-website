@@ -13,6 +13,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="bootstrap-material-design-master/dist/css/material-wfont.css" rel="stylesheet">
     <!-- Bootstrap theme -->
     <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
 
@@ -42,13 +43,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Peter Gicking</a>
+          <a class="navbar-brand" href="http://pgicking.github.io">Peter Gicking</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li id ='homeButton' class="active"><a href="#">Home</a></li>
+            <li id ='aboutButton'><a href="#">About</a></li>
+            <li id ='contactButton'><a href="#">Contact</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
@@ -65,58 +66,28 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+    <!-- Main site content -->
+
+    <!-- Upper title bar -->
+    <div id='mainRow' class='row'>
+      <div class='col-md-10 col-md-offset-1 centerMainContainer'>
+        <div class='col-md-10 col-md-offset-1 mainContentContainer'>
+
+          <!--  ==================   Templates go here =========  -->
+
+        </div>
+      </div>
+    </div>
+    <nav id='footer' class="navbar navbar-default navbar-fixed-bottom navbar-inverse" role='navigation'>
+      <div class='container'>
+        <p class='text-muted'>&copy; Peter Gicking 2014 Last updated 04-15-14, at 2:07:29 PST 2014 </p>
+      </div>
+    </nav>
 
     <div class="container theme-showcase" role="main">
 
 
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><button type="button" class="btn btn-lg btn-primary">Learn more</button></p>
-      </div>
-
-          <div class="row-fluid">
-            <div class="span4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><button type="button" class="btn btn-default">View details</button></p>
-            </div><!--/span-->
-            <div class="span4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div><!--/span-->
-            <div class="span4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div><!--/span-->
-          </div><!--/row-->
-          <div class="row-fluid">
-            <div class="span4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div><!--/span-->
-            <div class="span4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div><!--/span-->
-            <div class="span4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div><!--/span-->
-          </div><!--/row-->
-        </div><!--/span-->
-      </div><!--/row-->
-
-      <hr>
-
       <footer>
-        <p>&copy; Peter Gicking 2014</p>
       </footer>
 
     </div><!--/.fluid-container-->
@@ -124,6 +95,58 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="bootstrap/jquery-2.1.1.js"></script>
+    <script type='text/javascript'>
+      $(document).ready(function() {
+        $.getScript('js/bootstrap.min.js')
+        var screenWidth = $(document).width();
+        if (screenWidth > 700) {
+          $('.mainContentContainer').css('min-width', '600px')
+        }
+        $('.mainContentContainer').load('Pages/home.html');
+
+
+
+
+        $('#homeButton').on('click', function () {
+          loadPage('home')
+        })
+        $('#aboutButton').on('click', function () {
+          loadPage('about')
+        })
+        $('#contactButton').on('click', function () {
+          loadPage('contact')
+        })
+
+
+        $('#homeButton').on('click', function () {
+          MakeActive('#homeButton')
+        })
+        $('#aboutButton').on('click', function () {
+          MakeActive('#aboutButton')
+        })
+        $('#contactButton').on('click', function () {
+          MakeActive('#contactButton')
+        })
+
+        /*$('#aboutButton').on('click', function () {
+          MakeActive('#aboutButton')
+        })*/
+
+        function MakeActive(divid) {
+          $('#homeButton').removeClass('active')
+          $('#aboutButton').removeClass('active')
+          $('#contactButton').removeClass('active')
+          $(divid).addClass('active')
+        }
+        function loadPage(pageid) {
+          $('.mainContentContainer').html('');
+          $('.mainContentContainer').load('Pages/' + pageid + '.html');
+        }
+      })
+    </script>
+
+
     <script src="bootstrap/js/jquery.js"></script>
     <script src="bootstrap/js/bootstrap-transition.js"></script>
     <script src="bootstrap/js/bootstrap-alert.js"></script>
