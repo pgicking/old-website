@@ -5,21 +5,21 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <meta name="description" content="Peter Gickings Personal website">
+    <meta name="author" content="Peter Gicking">
 
-    <title>Theme Template for Bootstrap</title>
+
+    <title></title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- <link href="bootstrap-material-design-master/dist/css/material-wfont.css" rel="stylesheet">
     <!-- Bootstrap theme -->
     <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
     <link href="bootstrap/css/bootstrap-override.css" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="style/images.css">
-    <!-- Custom styles for this template -->
-    <link href="theme.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -56,20 +56,20 @@
               <ul class="dropdown-menu" role="menu">
                 <li class="divider"></li>
                 <li class="dropdown-header">C/C++</li>
-                <li><a href="#">Sorts In C</a></li>
-                <li><a href="#">CS16X coming soon</a></li>
+                <li><a href="#">(Coming Soon)Sorts In C</a></li>
+                <li><a href="#">(Coming Soon)CS16X coming soon</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Java</li>
-                <li><a href="#">Google Web Toolkit</a></li>
-                <li><a href="#">Java REST Client</a></li>
-                <li><a href="#">Imgur API uploader</a></li>
+                <li id="GWTButton"><a href="#">Google Web Toolkit</a></li>
+                <li><a href="#">(Coming Soon)Java REST Client</a></li>
+                <li><a href="#">(Coming Soon)Imgur API uploader</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Python</li>
-                <li><a href="#">Bootstrapping Simulator</a></li>
-                <li><a href="#">Runaway Process Check</a></li>
+                <li><a href="#">(Coming Soon)Bootstrapping Simulator</a></li>
+                <li><a href="#">(Coming Soon)Runaway Process Check</a></li>
                 <li class="dropdown-header">Miscellaneous</li>
-                <li><a href="#">Applescript Background Cycler</a></li>
-                <li><a href="#">Kernel programming with KPL</a></li>
+                <li><a href="#">(Coming Soon)Applescript Background Cycler</a></li>
+                <li><a href="#">(Coming Soon)Kernel programming with KPL</a></li>
               </ul>
             </li>
           </ul>
@@ -120,20 +120,29 @@
         $('#homeButton').on('click', function () {
           loadPage('home')
         })
+
         $('#resumeButton').on('click', function () {
           loadPage('resume')
         })
+
         $('#contactButton').on('click', function () {
           loadPage('contact')
+        })
+
+        $('#GWTButton').on('click', function () {
+          loadPage('GWT')
+          MakeActive('#projectButton')
         })
 
 
         $('#homeButton').on('click', function () {
           MakeActive('#homeButton')
         })
+
         $('#resumeButton').on('click', function () {
           MakeActive('#resumeButton')
         })
+
         $('#contactButton').on('click', function () {
           MakeActive('#contactButton')
         })
@@ -143,6 +152,7 @@
           $('#homeButton').removeClass('active')
           $('#resumeButton').removeClass('active')
           $('#contactButton').removeClass('active')
+
           $(divid).addClass('active')
         }
         function loadPage(pageid) {
