@@ -65,7 +65,7 @@
                 <li><a href="#">(Coming Soon)Imgur API uploader</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Python</li>
-                <li><a href="#">(Coming Soon)Bootstrapping Simulator</a></li>
+                <li id="bootstrapButton"><a href="#">Bootstrapping Simulator</a></li>
                 <li><a href="#">(Coming Soon)Runaway Process Check</a></li>
                 <li class="dropdown-header">Miscellaneous</li>
                 <li><a href="#">(Coming Soon)Applescript Background Cycler</a></li>
@@ -119,14 +119,17 @@
 
         $('#homeButton').on('click', function () {
           loadPage('home')
+          MakeActive('#homeButton')
         })
 
         $('#resumeButton').on('click', function () {
           loadPage('resume')
+          MakeActive('#resumeButton')
         })
 
         $('#contactButton').on('click', function () {
           loadPage('contact')
+          MakeActive('#contactButton')
         })
 
         $('#GWTButton').on('click', function () {
@@ -134,8 +137,12 @@
           MakeActive('#projectButton')
         })
 
+        $('#bootstrapButton').on('click', function () {
+          loadPage('BootStrapper')
+          MakeActive('#projectButton')
+        })
 
-        $('#homeButton').on('click', function () {
+       /* $('#homeButton').on('click', function () {
           MakeActive('#homeButton')
         })
 
@@ -145,7 +152,7 @@
 
         $('#contactButton').on('click', function () {
           MakeActive('#contactButton')
-        })
+        }) */
 
 
         function MakeActive(divid) {
