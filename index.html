@@ -56,7 +56,7 @@
               <ul class="dropdown-menu" role="menu">
                 <li class="divider"></li>
                 <li class="dropdown-header">C/C++</li>
-                <li><a href="#">(Coming Soon)Sorts In C</a></li>
+                <li id="sortButton"><a href="#">Sorts In C</a></li>
                 <li><a href="#">(Coming Soon)CS16X coming soon</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Java</li>
@@ -142,6 +142,10 @@
           MakeActive('#projectButton')
         })
 
+        $('#sortButton').on('click', function () {
+          loadPage('Sorts')
+          MakeActive('#projectButton')
+        })
        /* $('#homeButton').on('click', function () {
           MakeActive('#homeButton')
         })
