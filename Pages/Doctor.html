@@ -1,0 +1,60 @@
+<div class='page-header'>
+    <div class='row'>
+
+        <h2 class="intro-text text-center">Doctor Who
+            <strong>Desktop Cycler</strong>
+        </h2>
+    </div>
+    <div class='row'>
+        <div id='secondaryTitle' class='col-md-15'><p class='text-center'>Small Applescript program that switches your desktop background to match the hour</p></div>
+
+
+
+        <div id="leftcontent" class='col-md-6'>
+
+            <p class="text-center"><a href="https://github.com/pgicking/misc/blob/master/DoctorClock.applescript"><strong>GitHub</strong></a></p>
+
+        </div>
+        <div id="rightcontent" class='col-md-5'>
+
+            <p class="text-center"><a href="https://drive.google.com/file/d/0B0LcpQ5njD5mcUVOcTczUTdrRFk/view?usp=sharing"><strong>Images and Code</strong></a></p>
+            <p class="text-center text-muted" style="font-size: x-small">Requires: OSX, crontab</p>
+
+        </div>
+
+    </div>
+</div>
+<!--TODO: Add a picture or something to liven up the page a bit -->
+<div class='page-content'>
+    <div class='col-md-10'>
+        <a href="http://imgur.com/jonuHdh"><img src="http://i.imgur.com/jonuHdh.jpg" title="source: imgur.com" style="width: 700px; height: 100%" class="img-responsive center-block" /></a>
+    </div>
+
+    <div class='row'>
+        <div id='mainContent' class='col-md-11'><br>
+            <p>
+                Inspired by <a href="http://www.reddit.com/r/doctorwho/comments/2fby1g/edited_this_doctor_who_wallpaper_to_spotlight/>">a post on /r/DoctorWho</a> I made a small applescript that gets the hour
+                from the current time and sets the correct wallpaper based off that. So if its 10pm or 10am the 10 wallpaper will be shown for the hour. I then used crontab to run this script every minute so that
+                it would switch on the hour.
+                <br><br>
+                I choose applescript because it integrated well with OSX, much better than any other portable language. My first attempt at this was doing it in python but that required lots of strange imports and
+                stranger syntax to get python to talk to the operating system to change the desktop background. With applescript it was an easy "tell finder to set desktop background" type statement.
+            </p>
+
+            <div class="row">
+                <strong>How too Install</strong>
+            </div>
+            <p>If you have a mac and are a fan of DoctorWho and want this, heres how to do it.
+            <ul>
+                <li>Download the images <a href="https://drive.google.com/file/d/0B0LcpQ5njD5mcUVOcTczUTdrRFk/view?usp=sharing">here</a></li>
+                <li>Unzip the file and put it where ever you'd like</li>
+                <li>Open up the <span style="color: red;">"DoctorClock.scpt"</span> and change <p class="text-info">/Users/pgicking/pgicking@gmail.com/DoctorClock/</p> to where you put the images </li>
+                <li>Open up a terminal and type <span style="color: #0711ff;">crontab -e</span> and put:
+                    <br> <span style="color: #016aff;">* * * * * osascript</span> <span style="color: dimgray;">"path to your DoctorClock.scpt"</span><br><br></li>
+                <li>Save and exit the crontab session and enjoy!</li>
+            </ul>
+            </p>
+        </div>
+
+    </div>
+</div>

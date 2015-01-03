@@ -67,8 +67,9 @@
                 <li class="dropdown-header">Python</li>
                 <li id="bootstrapButton"><a href="#">Bootstrapping Simulator</a></li>
                 <li><a href="#">(Coming Soon)Runaway Process Check</a></li>
+                <li class="divider"></li>
                 <li class="dropdown-header">Miscellaneous</li>
-                <li><a href="#">(Coming Soon)Applescript Background Cycler</a></li>
+                <li id="doctorButton"><a href="#">Applescript Background Cycler</a></li>
                 <li><a href="#">(Coming Soon)Kernel programming with KPL</a></li>
               </ul>
             </li>
@@ -146,6 +147,12 @@
           loadPage('Sorts')
           MakeActive('#projectButton')
         })
+
+        $('#doctorButton').on('click', function () {
+          loadPage('Doctor')
+          MakeActive('#projectButton')
+        })
+
        /* $('#homeButton').on('click', function () {
           MakeActive('#homeButton')
         })
