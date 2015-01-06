@@ -62,7 +62,7 @@
                 <li class="dropdown-header">Java</li>
                 <li id="GWTButton"><a href="#">Google Web Toolkit</a></li>
                 <li><a href="#">(Coming Soon)Java REST Client</a></li>
-                <li><a href="#">(Coming Soon)Imgur API uploader</a></li>
+                <li id="imgurButton"><a href="#">Imgur API uploader</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Python</li>
                 <li id="bootstrapButton"><a href="#">Bootstrapping Simulator</a></li>
@@ -156,6 +156,11 @@
 
         $('#runawayButton').on('click', function () {
           loadPage('Runaway')
+          MakeActive('#projectButton')
+        })
+
+        $('#imgurButton').on('click', function () {
+          loadPage('Imgur')
           MakeActive('#projectButton')
         })
 
