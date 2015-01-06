@@ -1,0 +1,71 @@
+<!-- Upper title bar -->
+<div class='page-header'>
+    <div class='row'>
+
+        <h2 class="intro-text text-center">Runaway/Printer
+            <strong>Scripts</strong>
+        </h2>
+    </div>
+    <div class='row'>
+        <div id='secondaryTitle' class='col-md-12'><p class='text-center'>Small python/bash/PHP scripts that prints to multiple printers and checks linux machines for high load or memory usage</p></div>
+
+        <div id="leftcontent" class='col-md-6'>
+
+            <p class="text-center"><a href="https://github.com/pgicking/Scripting/blob/master/Scripting/Runaway.py"><strong>Runaway Python Version</strong></a></p>
+
+        </div>
+        <div id="rightcontent" class='col-md-6'>
+
+            <p class="text-center"><a href="https://github.com/pgicking/Scripting/blob/master/Scripting/printerscript.sh"><strong>Printer Check</strong></a></p>
+
+        </div>
+
+        <div id="midcontent" class='col-md-6'>
+
+            <p class="text-center"><a href="https://github.com/pgicking/Scripting/blob/master/Scripting/Runaway/status.sh"><strong>Runaway Bash Version</strong></a></p>
+
+        </div>
+    </div>
+</div>
+<!--TODO: Add Border around image -->
+<div class='page-content'>
+
+    <div class='row'>
+        <div id='mainContent' class='col-md-11'><br>
+            <div class="row">
+                <strong>Runaway script</strong>
+            </div>
+            <p>
+                At my time in the CAT we were often required to check all our lab machines for long running processes, unusually high load averages or memory usage. Unfortunately there was way too many lab
+                machines to go to by ssh and check manually so we had to write scripts. I wrote two differnt versions during my time at the CAT
+                <br>
+                <br>
+                Version 1 was a python script and my first real attempt at programming in python. It was in my home directory on all the machines that needed to me checked and I would run a separate script that
+                would ssh into the machine, run the python script, then ssh to the next machine in the list. The python script would then grab the load averages of the machine and memory usage level and color code
+                it green, yellow or red depending on the severity. The flaw in this script was that all the color coding was done by static values I set which wasn't helpful for some machines that had much more memory
+                than our typical lab machines.
+                <br>
+                <br>
+                Version 2 I wrote much later and in bash instead of python because some of the machines we needed to check didn't have python. This one was much simpler than the python script, there was no color coding
+                and the print out was very bland but it used the same ssh'ing loop the previous one did to access all the machines.
+                It did fix the problem with the previous version of static values and instead calculated memory as a percentage used. It printed all this to a text file I had another small
+                PHP program that would print it out to a web page.
+            </p>
+
+            <div class="row">
+                <strong>Printer Check</strong>
+            </div>
+            <p>
+                Another thing we had to do in the CAT was check to machine sure there were not issues with printers and their page coverage. Same issue as before you couldn't manually print to every printer
+                we needed to check without taking over an hour to find and select them all so one of our first assignments at the CAT was to write a script that would do this for us. Mine is written in bash
+                and is commented to explain to future CATs what its doing so they can learn and build their own.
+                <br>
+                <br>
+                Basically what it does is spits out my name and the date to the test page with a placeholder "__printerinfo__" line and then fills the entire page precisely 4720 characters to fill a standard
+                8x11" page with random gibberish from /dev/urandom. It also replaces all non-printable characters with "?" as to not accidentally send the printer postscript and break it. Then a simple for loop
+                that replaces the "__printerinfo__" with the name of the printer and prints to the printer. Collect all the pages from each printer to see if theres any faded lines or smudges and call it a day.
+            </p>
+        </div>
+
+    </div>
+</div>

@@ -66,10 +66,11 @@
                 <li class="divider"></li>
                 <li class="dropdown-header">Python</li>
                 <li id="bootstrapButton"><a href="#">Bootstrapping Simulator</a></li>
-                <li><a href="#">(Coming Soon)Runaway Process Check</a></li>
+
                 <li class="divider"></li>
                 <li class="dropdown-header">Miscellaneous</li>
                 <li id="doctorButton"><a href="#">Applescript Background Cycler</a></li>
+                <li id="runawayButton"><a href="#">CAT Scripting Work</a></li>
                 <li><a href="#">(Coming Soon)Kernel programming with KPL</a></li>
               </ul>
             </li>
@@ -150,6 +151,11 @@
 
         $('#doctorButton').on('click', function () {
           loadPage('Doctor')
+          MakeActive('#projectButton')
+        })
+
+        $('#runawayButton').on('click', function () {
+          loadPage('Runaway')
           MakeActive('#projectButton')
         })
 
