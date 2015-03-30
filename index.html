@@ -56,7 +56,7 @@
               <ul class="dropdown-menu" role="menu">
                 <li class="divider"></li>
                 <li class="dropdown-header">Capstone</li>
-                <li id="capstoneButton"><a href="#">Capstone Project</a></li>
+                <li id="capstoneButton"><a href="#">Routelandia</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">C/C++</li>
                 <li id="sortButton"><a href="#">Sorts In C</a></li>
@@ -170,6 +170,11 @@
           loadPage('JavaRest')
           MakeActive('#projectButton')
         })
+
+          $('#capstoneButton').on('click', function () {
+              loadPage('Routelandia')
+              MakeActive('#projectButton')
+          })
 
        /* $('#homeButton').on('click', function () {
           MakeActive('#homeButton')
