@@ -41,7 +41,8 @@
         <div id='mainContent' class='col-md-11'><br>
             <p>
                 The group project I was apart of for my computer science capstone. I was on a team of 7 members and we developed the Routelandia app and backend for the Portal Project.
-                The app lets you select two points on a specific highway and will calculate the travel time in the past, present and predictions in the future.
+                The app lets you select two points on a specific highway and will calculate the travel time in the past, present and predictions in the future. The sponsor only wanted an
+                android app but some of the team members are continuing on with an iOS app, which will hopefully be released in the coming months.
             </p>
             <p>The main idea behind the app was to help people decide when they should start to go home. Since traffic follows very cyclical patterns, the app will find these patterns and use them
                to predict how traffic is going to look in the future using data from the Oregon Department of Transportation.</p>
@@ -58,13 +59,19 @@
                 <li>The accuracy number will let the user know how much to trust the predictions</li></ul>
             </ul>
             <div class="row">
-                <strong>Personal Notes</strong>
+                <strong>My involvement/Responsibilites</strong>
             </div>
-            <p>We were given free reign to be as ambitious or conservative as we wanted with the UI. It was made clear that designing UIs with GWT is very challenging and not very intuitive because everything is
-                "blocks" inside of blocks. A common theme in student deigns was most of them had all the airlines and flights stored in one dynamically updating table, I found that to be too hard to read so I opted
-                to have tabs for each airline to store the flights. Getting the tabs to work properly took the most hours out of all the other features combined because the table and tab would go wonky if there was no data in it.
-                It was a good learning experience on how a small feature can sometimes be difficult to implement.
-            </p>
+            <ul>
+                <li>Writing the Detectors API routes</li>
+                <li>Coordination between backend and frontend in developing API structure</li>
+                <li>Writing and implementing the stations pairing algorithm</li>
+                <ul>
+                    <li>Front end could only send us coordinates and not station IDs</li>
+                    <li>I helped make a database query that would grab the nearest stations and it often grabbed at least 4 stations or more per point</li>
+                    <li>I wrote an algorithm that figured out which station pair was the only "legal" one from the 8+ points</li>
+                </ul>
+                <li>Lots of miscellaneous code writing and improvement</li>
+            </ul>
         </div>
 
     </div>
